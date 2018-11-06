@@ -266,7 +266,7 @@ can explore how to use traits to accept arguments of many different types.
 For example, in Listing 10-13, we implemented the `Summary` trait on the types
 `NewsArticle` and `Tweet`. We can define a function `notify` that calls the
 `summarize` method on its parameter `item`, which is of some type that implements
-the `Summary` trait. To do this, we can use the '`impl Trait`' syntax, like this:
+the `Summary` trait. To do this, we can use the ‘`impl Trait`’ syntax, like this:
 
 ```rust,ignore
 pub fn notify(item: impl Summary) {
@@ -280,7 +280,7 @@ the `Summary` trait, like `summarize`.
 #### Trait Bounds
 
 The `impl Trait` syntax works for short examples, but is syntax sugar for a
-longer form. This is called a 'trait bound', and it looks like this:
+longer form. This is called a ‘trait bound’, and it looks like this:
 
 ```rust,ignore
 pub fn notify<T: Summary>(item: T) {
@@ -491,12 +491,12 @@ fn main() {
     let number_list = vec![34, 50, 25, 100, 65];
 
     let result = largest(&number_list);
-    println!("The largest number is {}", result);
+    println!(”The largest number is {}”, result);
 
-    let char_list = vec!['y', 'm', 'a', 'q'];
+    let char_list = vec![’y’, ‘m’, ‘a’, ‘q’];
 
     let result = largest(&char_list);
-    println!("The largest char is {}", result);
+    println!(”The largest char is {}”, result);
 }
 ```
 
@@ -547,9 +547,9 @@ impl<T> Pair<T> {
 impl<T: Display + PartialOrd> Pair<T> {
     fn cmp_display(&self) {
         if self.x >= self.y {
-            println!("The largest member is x = {}", self.x);
+            println!(”The largest member is x = {}”, self.x);
         } else {
-            println!("The largest member is y = {}", self.y);
+            println!(”The largest member is y = {}”, self.y);
         }
     }
 }
